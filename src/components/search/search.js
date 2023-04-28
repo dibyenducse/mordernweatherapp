@@ -5,12 +5,16 @@ import { url, geoApiOptions } from "../../api";
 
 const Search = ({onSearchChange}) => {
 
-    const [serach, setSearch] = useState(null);
+    const [search, setSearch] = useState(null);
 
-    const loadOptions = (inputValue) => {
-        return (
-            
-        )
+    const loadOptions = async (inputValue) => {
+        try {
+	const response = await fetch(`${url}/cities?minpopulation=1000000&namePrefix=${inputValue}`, geoApiOptions);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+        }
     }
 
     const handleOnChange = (serachData) => {

@@ -10,7 +10,7 @@ export const geoApiOptions = {
 };
 
 
-
+/*
 try {
 	const response = await fetch(url, geoApiOptions);
 	const result = await response.text();
@@ -18,3 +18,4 @@ try {
 } catch (error) {
 	console.error(error);
 }
+*/
